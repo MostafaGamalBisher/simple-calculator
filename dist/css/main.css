@@ -1,0 +1,102 @@
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #64748b;
+  --color-background: #ffffff;
+  --color-text: #1e293b;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --font-family-base: 'Segoe UI', system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-primary);
+}
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

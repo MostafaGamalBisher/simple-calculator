@@ -1,0 +1,35 @@
+// ============================================================
+// VARIABLES
+// CSS custom properties → design tokens (colors, spacing, typography)
+// SCSS variables → breakpoints only (CSS vars can't work in @media)
+// ============================================================
+
+// --- CSS Custom Properties (live in the browser) ---
+:root {
+  // Colors
+  --color-primary: #3b82f6;
+  --color-secondary: #64748b;
+  --color-background: #ffffff;
+  --color-text: #1e293b;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+
+  // Typography
+  --font-family-base: 'Segoe UI', system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  // Spacing
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}
+
+// --- SCSS Variables (compile-time only) ---
+
+// Breakpoints
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
