@@ -1,34 +1,8 @@
-// ============================================================
-// GLOBAL
-// Project-wide styles applied to base HTML elements.
-// ============================================================
-
-body {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  color: var(--color-text);
-  background-color: var(--color-background);
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--font-weight-bold);
-  line-height: 1.2;
-}
-
-a {
-  color: var(--color-primary);
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-button {
-  cursor: pointer;
+html {
+  font-size: 62.5%;
 }
