@@ -44,7 +44,7 @@ html {
   height: 100%;
   z-index: 0;
   opacity: 0.2;
-  background: url("../assets/img/images/pattern.jpeg");
+  background: url("../../src/assets/img/images/pattern.jpeg");
   background-size: contain;
   filter: blur(2px);
 }
@@ -268,7 +268,5 @@ html {
 .themes__toggle--isActive:before {
   left: calc(var(--toggle-width) - var(--circle-width) - var(--toggle-padding));
 }
-
-
 
 /*# sourceMappingURL=main.css.map */
