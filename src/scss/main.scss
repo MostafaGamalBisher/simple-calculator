@@ -1,10 +1,1 @@
-// ============================================================
-// MAIN SCSS ENTRY POINT
-// Import order: variables → reset → global → responsive
-// ============================================================
-
-@use 'variables';
-@use 'reset';
-@use 'global';
 @use 'style';
-@use 'responsive';

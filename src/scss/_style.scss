@@ -1,3 +1,30 @@
+:root {
+  --color-main-background: #3a4764;
+  --color-keypad-background: #232c43;
+  --color-screen-background: #182034;
+  --color-key-blue-background: #637097;
+  --color-key-blue-shadow: #404e72;
+  --color-key-blue-hover: #a2b3e1;
+  --color-key-red-background: #d03f2f;
+  --color-key-red-shadow: #93261a;
+  --color-key-red-hover: #f86c5c;
+  --color-key-gray-background: #eae3dc;
+  --color-key-gray-shadow: hsl(28, 16%, 65%);
+  --color-dark-blue-text: #444b5a;
+  --color-white-text: #ffffff;
+  --border-radius: 10px;
+  --timing-animation: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 .container {
   font-size: 1.6rem;
   font-family: 'League Spartan', sans-serif;
@@ -211,3 +238,5 @@
 .themes__toggle--isActive:before {
   left: calc(var(--toggle-width) - var(--circle-width) - var(--toggle-padding));
 }
+
+/*# sourceMappingURL=style.css.map */
