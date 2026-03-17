@@ -52,6 +52,7 @@ const deleteButtonHandler = () => {
 const executeOperation = () => {};
 
 const operationButtonHandler = () => {};
+
 /* operation Handler */
 const operationHandler = (value) => {
   switch (value) {
