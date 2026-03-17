@@ -1,8 +1,13 @@
-import { toggleClass, pressToggle } from './utils.js';
-import { keyboardNumbersDisplaying } from './display.js';
+import { toggleClass, pressToggle, buttonsVlaueHandler } from './utils.js';
+import { updateScreen } from './display.js';
 
+let storedNumber = '';
+let currentNumber = '';
+let operation = '';
+
+/* toggle */
 const toggleButton = document.querySelector('.themes__toggle');
-const numbersElements = document.querySelectorAll('[data-type]');
+const buttonsElements = document.querySelectorAll('[data-type]');
 
 toggleButton.addEventListener('click', () => {
   toggleClass(toggleButton, 'themes__toggle--isActive');
@@ -10,6 +15,40 @@ toggleButton.addEventListener('click', () => {
 
 pressToggle(toggleButton, 'themes__toggle--isActive');
 
-numbersElements.forEach((element) => {
-  keyboardNumbersDisplaying(element, 'number');
+/* display current value to the screen */
+const numbersHandler = (value) => {
+  if (value === '.' && currentNumber.includes('.')) {
+    return;
+  }
+  if (value === '0' && !currentNumber) {
+    return;
+  }
+
+  currentNumber += value;
+  updateScreen(currentNumber);
+};
+
+buttonsElements.forEach((element) => {
+  buttonsVlaueHandler(element, 'number', numbersHandler);
+});
+
+/* reset button */
+const resetButtonHandler = () => {
+  storedNumber = '';
+  currentNumber = '';
+  operation = '';
+  updateScreen(currentNumber);
+};
+
+/* operation Handler */
+const operationHandler = (value) => {
+  switch (value) {
+    case 'c':
+      resetButtonHandler();
+      break;
+  }
+};
+
+buttonsElements.forEach((element) => {
+  buttonsVlaueHandler(element, 'operation', operationHandler);
 });
