@@ -49,6 +49,9 @@ const deleteButtonHandler = () => {
   updateScreen(currentNumber);
 };
 
+const executeOperation = () => {};
+
+const operationButtonHandler = () => {};
 /* operation Handler */
 const operationHandler = (value) => {
   switch (value) {
@@ -59,6 +62,12 @@ const operationHandler = (value) => {
     case 'Backspace':
       deleteButtonHandler();
       break;
+
+    case 'Enter':
+      executeOperation();
+      break;
+    default:
+      operationButtonHandler();
   }
 };
 
