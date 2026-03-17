@@ -28,10 +28,6 @@ const numbersHandler = (value) => {
   updateScreen(currentNumber);
 };
 
-buttonsElements.forEach((element) => {
-  buttonsVlaueHandler(element, 'number', numbersHandler);
-});
-
 /* reset button */
 const resetButtonHandler = () => {
   storedNumber = '';
@@ -50,5 +46,7 @@ const operationHandler = (value) => {
 };
 
 buttonsElements.forEach((element) => {
+  buttonsVlaueHandler(element, 'number', numbersHandler);
+
   buttonsVlaueHandler(element, 'operation', operationHandler);
 });
