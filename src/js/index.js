@@ -1,4 +1,4 @@
-import { toggleClass, pressToggle, buttonsVlaueHandler } from './utils.js';
+import { toggleClass, pressToggle, buttonsValueHandler } from './utils.js';
 import { updateScreen } from './display.js';
 
 let storedNumber = '';
@@ -36,17 +36,45 @@ const resetButtonHandler = () => {
   updateScreen(currentNumber);
 };
 
+/* delete button */
+const deleteButtonHandler = () => {
+  if (!currentNumber || currentNumber === '0') {
+    return;
+  }
+  if (currentNumber.length === 1) {
+    currentNumber = '';
+  } else {
+    currentNumber = currentNumber.substring(0, currentNumber.length - 1);
+  }
+  updateScreen(currentNumber);
+};
+
 /* operation Handler */
 const operationHandler = (value) => {
   switch (value) {
     case 'c':
       resetButtonHandler();
       break;
+
+    case 'Backspace':
+      deleteButtonHandler();
+      break;
   }
 };
 
-buttonsElements.forEach((element) => {
-  buttonsVlaueHandler(element, 'number', numbersHandler);
+//tont reapting the forEach function and also not attching ever handler ti every button
+// buttonsElements.forEach((element) => {
+//   buttonsValueHandler(element, 'number', numbersHandler);
 
-  buttonsVlaueHandler(element, 'operation', operationHandler);
+//   buttonsValueHandler(element, 'operation', operationHandler);
+// });
+
+const handlers = {
+  number: numbersHandler,
+  operation: operationHandler,
+};
+
+buttonsElements.forEach((element) => {
+  const type = element.dataset.type;
+  buttonsValueHandler(element, type, handlers[type]);
 });
