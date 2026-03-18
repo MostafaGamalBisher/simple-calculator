@@ -78,17 +78,11 @@ const operationButtonHandler = (value) => {
   if (currentNumber && !storedNumber) {
     storedNumber = currentNumber;
     currentNumber = '';
-    operation = value;
-  } else if (storedNumber) {
-    operation = value;
-
-    if (currentNumber) {
-      executeOperation();
-    }
+  } else if (storedNumber && currentNumber) {
+    executeOperation();
   }
-  console.log({ currentNumber });
-  console.log({ storedNumber });
-  console.log({ operation });
+
+  operation = value;
 };
 
 /* operation Handler */
