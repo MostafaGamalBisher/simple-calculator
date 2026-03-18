@@ -22,4 +22,4 @@ export const buttonsValueHandler = (element, dataType, handler) => {
 //numbersHandler(element.dataset.value) means the function will handle for example the value of button 2 with the value of 2
 //operationHandler(element.dataset.value) means handling the value of the clicked button for example reset and passes the value to the faunctions that attach the right excution of the button and its value
 
-//instead of repeating passing the handlers as parameters and attching the value automaticlly
+//instead of repeating, passing the handlers as parameters and attching the value automaticlly
