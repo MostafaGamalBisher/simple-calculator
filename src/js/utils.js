@@ -13,10 +13,8 @@ export const pressToggle = (element, toggledClass) => {
 };
 
 // attaching element and its datatype and handling its a value
-export const buttonsValueHandler = (element, dataType, handler) => {
-  element.addEventListener('click', () => {
-    element.dataset.type === dataType && handler(element.dataset.value);
-  });
+export const buttonsValueHandler = (element, handler) => {
+  handler(element.dataset.value);
 };
 //the value of the handler will be setted automaticlly by selecting the element and it's passed to the handler to be handled
 //numbersHandler(element.dataset.value) means the function will handle for example the value of button 2 with the value of 2

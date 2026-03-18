@@ -125,8 +125,10 @@ const handlers = {
 };
 
 buttonsElements.forEach((element) => {
-  const type = element.dataset.type;
-  buttonsValueHandler(element, type, handlers[type]);
+  element.addEventListener('click', () => {
+    const type = element.dataset.type;
+    buttonsValueHandler(element, handlers[type]);
+  });
 });
 
 //using keyboard
@@ -158,3 +160,5 @@ window.addEventListener('keydown', (e) => {
   const type = !isNaN(e.key) || e.key === '.' ? 'number' : 'operation';
   handlers[type](e.key);
 });
+
+const availableKeysElement = document.querySelector('[data-value="${}]');
