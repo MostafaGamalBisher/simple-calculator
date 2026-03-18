@@ -49,10 +49,46 @@ const deleteButtonHandler = () => {
   updateScreen(currentNumber);
 };
 
-const executeOperation = () => {};
+const executeOperation = () => {
+  if ((storedNumber, currentNumber, operation)) {
+    switch (operation) {
+      case '+':
+        storedNumber = parseFloat(storedNumber) + parseFloat(currentNumber);
+        break;
+      case '-':
+        storedNumber = parseFloat(storedNumber) - parseFloat(currentNumber);
+        break;
+      case '*':
+        storedNumber = parseFloat(storedNumber) * parseFloat(currentNumber);
+        break;
+      case '/':
+        storedNumber = parseFloat(storedNumber) / parseFloat(currentNumber);
+        break;
+    }
+    currentNumber = '';
+    updateScreen(storedNumber);
+  }
+};
 
-const operationButtonHandler = () => {
-  
+const operationButtonHandler = (value) => {
+  if (!currentNumber && !storedNumber) {
+    return;
+  }
+
+  if (currentNumber && !storedNumber) {
+    storedNumber = currentNumber;
+    currentNumber = '';
+    operation = value;
+  } else if (storedNumber) {
+    operation = value;
+
+    if (currentNumber) {
+      executeOperation();
+    }
+  }
+  console.log({ currentNumber });
+  console.log({ storedNumber });
+  console.log({ operation });
 };
 
 /* operation Handler */
@@ -70,11 +106,11 @@ const operationHandler = (value) => {
       executeOperation();
       break;
     default:
-      operationButtonHandler();
+      operationButtonHandler(value);
   }
 };
 
-//tont reapting the forEach function and also not attching ever handler ti every button
+//to not reapting the forEach function and also not attaching all handler to all button
 // buttonsElements.forEach((element) => {
 //   buttonsValueHandler(element, 'number', numbersHandler);
 
