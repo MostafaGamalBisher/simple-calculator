@@ -50,7 +50,7 @@ const deleteButtonHandler = () => {
 };
 
 const executeOperation = () => {
-  if ((storedNumber, currentNumber, operation)) {
+  if (storedNumber && currentNumber && operation) {
     switch (operation) {
       case '+':
         storedNumber = parseFloat(storedNumber) + parseFloat(currentNumber);
