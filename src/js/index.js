@@ -128,3 +128,33 @@ buttonsElements.forEach((element) => {
   const type = element.dataset.type;
   buttonsValueHandler(element, type, handlers[type]);
 });
+
+//using keyboard
+const availableKeys = [
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '.',
+  '+',
+  '-',
+  '*',
+  '/',
+  'Backspace',
+  'Enter',
+  'c',
+];
+
+window.addEventListener('keydown', (e) => {
+  if (!availableKeys.includes(e.key)) {
+    return;
+  }
+  const type = !isNaN(e.key) || e.key === '.' ? 'number' : 'operation';
+  handlers[type](e.key);
+});
