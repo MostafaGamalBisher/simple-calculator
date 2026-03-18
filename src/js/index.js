@@ -53,16 +53,24 @@ const executeOperation = () => {
   if (storedNumber && currentNumber && operation) {
     switch (operation) {
       case '+':
-        storedNumber = parseFloat(storedNumber) + parseFloat(currentNumber);
+        storedNumber = String(
+          parseFloat(storedNumber) + parseFloat(currentNumber)
+        );
         break;
       case '-':
-        storedNumber = parseFloat(storedNumber) - parseFloat(currentNumber);
+        storedNumber = String(
+          parseFloat(storedNumber) - parseFloat(currentNumber)
+        );
         break;
       case '*':
-        storedNumber = parseFloat(storedNumber) * parseFloat(currentNumber);
+        storedNumber = String(
+          parseFloat(storedNumber) * parseFloat(currentNumber)
+        );
         break;
       case '/':
-        storedNumber = parseFloat(storedNumber) / parseFloat(currentNumber);
+        storedNumber = String(
+          parseFloat(storedNumber) / parseFloat(currentNumber)
+        );
         break;
     }
     currentNumber = '';
