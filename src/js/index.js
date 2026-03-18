@@ -51,7 +51,9 @@ const deleteButtonHandler = () => {
 
 const executeOperation = () => {};
 
-const operationButtonHandler = () => {};
+const operationButtonHandler = () => {
+  
+};
 
 /* operation Handler */
 const operationHandler = (value) => {
