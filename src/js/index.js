@@ -1,4 +1,4 @@
-import { toggleClass, pressToggle, buttonsValueHandler } from './utils.js';
+import { toggleClass, pressToggle } from './utils.js';
 import { updateScreen } from './display.js';
 
 let storedNumber = '';
@@ -127,7 +127,7 @@ const handlers = {
 buttonsElements.forEach((element) => {
   element.addEventListener('click', () => {
     const type = element.dataset.type;
-    buttonsValueHandler(element, handlers[type]);
+    handlers[type](element.dataset.value);
   });
 });
 
@@ -154,11 +154,24 @@ const availableKeys = [
 ];
 
 window.addEventListener('keydown', (e) => {
-  if (!availableKeys.includes(e.key)) {
-    return;
-  }
-  const type = !isNaN(e.key) || e.key === '.' ? 'number' : 'operation';
-  handlers[type](e.key);
+  usingKeyboard(e.key);
 });
 
-const availableKeysElement = document.querySelector('[data-value="${}]');
+// const usingKeyboard = (key) => {
+//   if (!availableKeys.includes(key)) {
+//     return;
+//   }
+//   const type = !isNaN(key) || key === '.' ? 'number' : 'operation';
+//   handlers[type](key);
+// };
+
+const usingKeyboard = (key) => {
+  if (!availableKeys.includes(key)) return;
+
+  const elem = document.querySelector(`[data-value="${key}"]`);
+  if (!elem) return;
+
+  elem.classList.add('hover');
+  elem.click();
+  setTimeout(() => elem.classList.remove('hover'), 100);
+};
